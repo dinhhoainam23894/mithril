@@ -6,7 +6,7 @@
 
 Hãy phát triển 1 ứng dụng đơn giản gồm 1 vài khía cạnh lớn của Single Page Applications (SPA)
 
-Một ví dụ chạy tương tác có thể được thấy ở đây  [flems: Simple Application][1]
+Một ví dụ đang chạy có thể được thấy ở đây  [flems: Simple Application][1]
 
 Đầu tiên hãy tạo 1 điểm bắt đầu cho ứng dụng. Tạo 1 file `index.html`:
 ```html
@@ -23,7 +23,7 @@ Một ví dụ chạy tương tác có thể được thấy ở đây  [flems: 
 </html>
 ```
 
-Dòng <! Doctype html> cho biết đây là một tài liệu HTML 5. Thẻ meta charset cho biết mã hóa của tài liệu và thẻ meta Viewport chỉ ra cách các trình duyệt di động nên mở rộng quy mô trang. Thẻ title chứa văn bản được hiển thị trên tab trình duyệt cho ứng dụng này và thẻ script cho biết đường dẫn đến tệp Javascript điều khiển ứng dụng là gì.
+Dòng <! Doctype html> cho biết đây là một tài liệu HTML 5. Thẻ meta charset cho biết mã hóa của tài liệu và thẻ meta Viewport chỉ ra cách các trình duyệt di động nên mở rộng trang. Thẻ title chứa văn bản được hiển thị trên tab trình duyệt cho ứng dụng này và thẻ script cho biết đường dẫn đến tệp Javascript điều khiển ứng dụng là gì.
 
 Chúng tôi có thể tạo toàn bộ ứng dụng trong một tệp Javascript duy nhất, nhưng làm như vậy sẽ khiến việc điều hướng codebase trở nên khó khăn hơn. Thay vào đó, hãy chia mã thành các mô-đun và lắp ráp các mô-đun này thành một gói bin / app.js.
 
@@ -209,11 +209,11 @@ Lời gọi `m.mount` sẽ render các thành phần cụ thể (`UserList`) và
 * * *
 
 Giờ đây danh sách giống plain hơn vì chúng ta không định nghĩa bất kỳ style nào
-Có rất nhiều thỏa thuận và các thư viện giống nhau giúp cho việc tổ chức style cho ứng dụng ngày nay. 1 vài trong số chúng, như [Boostrap][14] quyết định một tập hợp cụ thể của các cấu trúc HTML và tên class có ý nghĩa, trong đó có xu hướng cung cấp sự thiếu hụt nhận thức thấp, nhưng nhược điểm của việc tùy biến làm cho khó khăn hơn. Những người khác, như Tachyons cung cấp một số lượng lớn các tên class tự mô tả, nguyên tử với chi phí tự đặt tên cho các class không mang tính ngữ nghĩa. “CSS-in-JS” là một loại hệ thống CSS đang phát triển phổ biến, về cơ bản bao gồm CSS phạm vi thông qua công cụ chuyển biên. Các thư viện CSS-in-JS đạt được khả năng bảo trì bằng cách giảm kích thước của không gian vấn đề, nhưng đến với chi phí có độ phức tạp cao.
+Có rất nhiều quy ước và các thư viện giống nhau giúp cho việc tổ chức style cho ứng dụng ngày nay. 1 vài trong số chúng, như [Boostrap][14] quyết định một tập hợp cụ thể của các cấu trúc HTML và tên class có ý nghĩa, trong đó có xu hướng cung cấp sự thiếu hụt nhận thức thấp, nhưng nhược điểm của việc tùy biến làm cho khó khăn hơn. Những người khác, như Tachyons cung cấp một số lượng lớn các tên class tự mô tả, nguyên tử với chi phí tự đặt tên cho các class không mang tính ngữ nghĩa. “CSS-in-JS” là một loại hệ thống CSS đang phát triển phổ biến, về cơ bản bao gồm CSS phạm vi thông qua công cụ chuyển biên. Các thư viện CSS-in-JS đạt được khả năng bảo trì bằng cách giảm kích thước của không gian vấn đề, nhưng đến với chi phí có độ phức tạp cao.
 
 Dù cho quy ước / thư viện CSS bạn chọn là gì, nguyên tắc chung là tránh các khía cạnh xếp tầng của CSS. Để giữ cho hướng dẫn này đơn giản, chúng tôi sẽ chỉ sử dụng CSS đơn giản với tên lớp quá rõ ràng để các kiểu tự cung cấp nguyên tử của Tachyons và sự va chạm tên lớp không được thông qua độ dài của tên lớp. Plain CSS  có thể đủ cho các dự án có độ phức tạp thấp (ví dụ: 3 đến 6 tháng của thời gian triển khai ban đầu và một vài giai đoạn dự án).
 
-Để thêm kiểu, trước tiên, hãy tạo tệp có tên styles.css và đưa nó vào tệp index.html:
+Để thêm style, trước tiên, hãy tạo tệp có tên styles.css và đưa nó vào tệp index.html:
 ```html
 <!doctype html>
 <html>
@@ -487,7 +487,7 @@ Bản thân biểu mẫu vẫn không lưu khi bạn nhấn "Lưu". Hãy làm ch
 
 Chúng ta đã thêm các sự kiện oninput vào cả hai đầu vào, đặt thuộc tính User.current.firstName và User.current.lastName khi người dùng nhập.
 
-Ngoài ra, chúng ta đã tuyên bố rằng phương thức User.save nên được gọi khi nhấn nút “Lưu”. Hãy thực hiện phương thức đó:
+Ngoài ra, chúng ta đã mô tả phương thức User.save nên được gọi khi nhấn nút “Lưu”. Hãy thực hiện phương thức đó:
     
     
     // src/models/User.js
